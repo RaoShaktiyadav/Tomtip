@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body> <div>
+    <h1><b>TOMTOP</b></h1>
+    <h4><b>Loving . Shopping . Sharing</b></h4>
+
+</div>
+<div>
+    <h3>Sign In</h3>
+    <h6>Sign In With</h6>
+
+<br><img src=" " alt=" Facebook">
+<img src=" " alt="Google">
+<img src=" " alt=" Twitter">
+<img src=" " alt="Vk ">
+<form>
+<input class="emails" type="text" placeholder="    Email address" ><br>
+    <input class="passd" type="text" placeholder="
+    password
+    " ><br>
+    <p>Forgot Your Password</p>
+<input type="submit" value="Sign In">
+
+</form>
+<p>New To Tomtop?<a href="signup.html"> Create Your Account</a></p>
+</div>
+    
+</body>
+</html><script>
+    document.querySelector("form").addEventListener("submit",myfunc);
+var regid=JSON.parse(localStorage.getItem("userDataCollection"))
+    function myfunc(event){
+event.preventDefault();
+var email=document.querySelector(".emails").value;
+var pass=document.querySelector(".passd").value;
+var flag=true;
+for(var i=0;i<regid.length;i++){
+    console.log(regid[i].passward)
+    if(regid[i].emailadd==email && regid[i].passward==pass){
+        flag=false;
+
+    }
+   
+}
+if(flag==false){
+    alert=("Sign In Successful");
+    window.location.href="home.html"
+}
+else{
+    alert=("Wrong Details")
+}
+    }
+
+</script>
