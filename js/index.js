@@ -306,3 +306,8 @@ var mobileNavBtn = document.querySelector(".mobile-menu");
     productdetails.push(elem);
     localStorage.setItem("productpage", JSON.stringify(productdetails));
   }
+
+  var cartpage = document.querySelector("#indexcart");
+  cartpage.addEventListener("click", function(){
+    window.location.href = "shoppingcart.html"
+  })
