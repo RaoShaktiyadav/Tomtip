@@ -1,0 +1,36 @@
+body {
+  text-align: center;
+}
+#btn {
+  border: 0px;
+  background-color: cyan;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: bolder;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+form > input,
+h1 {
+  margin-bottom: 40px;
+  padding: 8px 25px;
+}
+body > h1 {
+  background-color: teal;
+  color: white;
+  margin: 0px;
+  margin-bottom: 40px;
+}
+/* For small boxes */
+@media only screen and (min-width: 0px) and (max-width: 320px) {
+  #container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+/* For medium boxes */
+@media only screen and (min-width: 321px) and (max-width: 720px) {
+  #container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

@@ -1,0 +1,47 @@
+#a {
+  text-align: center;
+  color: aqua;
+}
+
+#b {
+  text-align: center;
+  color: brown;
+  margin-top: 1%;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.left {
+  margin: 2%;
+
+  width: 40%;
+}
+
+.right {
+  margin: 2%;
+
+  width: 40%;
+}
+
+.left > div > input {
+  width: 30%;
+  height: 45%;
+  margin-bottom: 5%;
+}
+
+@media only screen and (max-width: 650px) {
+  .container {
+    display: block;
+  }
+  .left {
+    width: 100%;
+  }
+  .right {
+    margin-top: 1em;
+    width: 100%;
+  }
+}
