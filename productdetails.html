@@ -24,7 +24,7 @@
         />
         <div class="realnav">
           <div class="smallnav">
-            <img
+            <img id="home"
               src="https://static.tomtop.com/tomtop/icon/logo.png?v=3"
               alt="main image"
               class="main-img"
@@ -56,7 +56,7 @@
               class="mobile-logo-icon"
             />
   
-            <div class="account">
+            <div id= "signin" class="account">
               <div>
                 <i class="far fa-user"></i>
               </div>
@@ -68,7 +68,7 @@
               <i class="far fa-heart"></i>
               <h3>Favorite</h3>
             </div>
-            <div class="cart">
+            <div id = "indexcart" class="cart">
               <i class="fas fa-shopping-cart"></i>
               <h3>Cart</h3>
             </div>
@@ -125,7 +125,7 @@
             <div class="two">
               <ul>
                 <li>
-                  <a href="">New Arrivals</a>
+                  <a href="arrival.html">New Arrivals</a>
                 </li>
                 <li>
                   <a href="">Flash Deals <i class="fas fa-chevron-down"></i></a>
@@ -297,44 +297,8 @@
 
 
 </html>
-<script>
-    var mobileNavBtn = document.querySelector(".mobile-menu");
-    var mobileNav = document.querySelector(".mobile-nav-menu");
-    var mobileNavExit = document.querySelector(".mobile-close-button");
-    var mobileHome = document.querySelector(".mobile-home-button");
-  
-    mobileNavBtn.addEventListener("click", () => {
-      mobileNav.classList.add("show-menu");
-    });
-    mobileNavExit.addEventListener("click", () => {
-      mobileNav.classList.remove("show-menu");
-    });
-  </script>
+<script src="../js/universal.js"></script>
+<script src="../js/productdetails.js"></script>
   
 
-<script>
-    var productdetails = JSON.parse(localStorage.getItem("productpage"));
-    console.log(productdetails)
 
-productdetails.map(function (elem){
-    var image = document.createElement("img");
-    image.setAttribute("src", elem.image);
-    
-    document.querySelector("#image-div").append(image);
-
-    document.querySelector("#dataname").textContent= elem.name;
-    document.querySelector("#dataprice").textContent = elem.price;
-    document.querySelector("#addtocart").addEventListener("click", function(){
-      addtoCart(elem);
-    });
-});
-var cartArray = JSON.parse(localStorage.getItem("CartItems")) || [];
-
-function addtoCart(elem) {
-    console.log(elem);
-    cartArray.push(elem);
-    localStorage.setItem("CartItems", JSON.stringify(cartArray));
-    alert("Added Succesfully!");
-  }
-
-</script>

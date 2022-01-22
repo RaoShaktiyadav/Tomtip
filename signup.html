@@ -1,66 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="../css/signup.css">
-</head>
-<body>
+    <link rel="stylesheet" href="../css/signup.css" />
+  </head>
+  <body>
     <div>
-        <h1 id="a"><b>TOMTOP</b></h1>
-        <h4 id="b"><b>Loving . Shopping . Sharing</b></h4>
-
-</div>
-<div id="c">
-    <h3 id="d">Create Account</h3>
-    <form class="in">
-    <input class="a" id="email" type="text" placeholder="    Email address" value=""><br>
-    <input class="b" id="pass" type="text" placeholder="
+      <h1 id="a"><b>TOMTOP</b></h1>
+      <h4 id="b"><b>Loving . Shopping . Sharing</b></h4>
+    </div>
+    <div id="c">
+      <h3 id="d">Create Account</h3>
+      <form class="in">
+        <input
+          class="a"
+          id="email"
+          type="text"
+          placeholder="    Email address"
+          value=""
+        /><br />
+        <input
+          class="b"
+          id="pass"
+          type="password"
+          placeholder="
     6-20 characters (letters or numbers only)
-    " value=""><br>
-    <input class="c" id="passd" type="text" placeholder="
+    "
+          value=""
+        /><br />
+        <input
+          class="c"
+          id="passd"
+          type="password"
+          placeholder="
     Enter password again
-    " value=""><br>
-  
-    <input class="d" id="cap" type="text" placeholder="   Please enter the c" value=""><img class="e" src="https://my.tomtop.com/member/code" alt="cap img">
-<div>
-    <p class="k"><input type="checkbox"> I agree to the tomtop Terms & Conditions , Privacy Policy.</p>
-    <p class="k"><input type="checkbox">Yes, Sign up our newsletter, get $50 coupons in your first email! You will receive our latest updates, news, and promotions from Tomtop.</p></div>
-    <input class="j" type="submit" value="Create My Account">
-</form>
-    <p class="l">>>Register at tomtop.com and receive 10 points.</p>
-    <p class="l">Already Have An Account ? <a href="signin.html">Sign In</a></p>
-</div>
-    
-</body>
+    "
+          value=""
+        /><br />
+
+        <input
+          class="d"
+          id="cap"
+          type="text"
+          placeholder="   Please enter the c"
+          value=""
+        /><img
+          class="e"
+          src="https://my.tomtop.com/member/code"
+          alt="cap img"
+        />
+        <div>
+          <p class="k">
+            <input type="checkbox" /> I agree to the tomtop Terms & Conditions ,
+            Privacy Policy.
+          </p>
+          <p class="k">
+            <input type="checkbox" />Yes, Sign up our newsletter, get $50
+            coupons in your first email! You will receive our latest updates,
+            news, and promotions from Tomtop.
+          </p>
+        </div>
+        <input class="j" type="submit" value="Create My Account" />
+      </form>
+      <p class="l">>>Register at tomtop.com and receive 10 points.</p>
+      <p class="l">
+        Already Have An Account ? <a href="signin.html">Sign In</a>
+      </p>
+    </div>
+  </body>
 </html>
-<script>
-    document.querySelector("form").addEventListener("submit",myfun);
-var localbag=JSON.parse(localStorage.getItem("userDataCollection"))||[];
-    function myfun(event){
-        event.preventDefault();
-        var email=document.querySelector("#email").value
-       var pass=document.querySelector("#pass").value
-        var passd=document.querySelector("#passd").value
-        
-
-
-        var userData={
-            emailadd:email,
-            passward:pass
-
-        };
-        localbag.push(userData);
-
-        localStorage.setItem("userDataCollection",JSON.stringify(localbag));
-        alert("sign up Successful ")
-        window.location.href="signin.html";
-
-    }
-    
-
-
-    
-</script>
+<script src="../js/signup.js"></script>
