@@ -1,0 +1,90 @@
+       #container{
+            border: 1px solid white;
+            width: 70%;
+            margin: auto;
+            display: flex;
+            justify-content: space-around;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            
+        }
+       
+        
+        .price-div p{
+            color: grey;
+        }
+        .price-div{
+            display: flex;
+            align-items: baseline;
+            margin-bottom: 0px;
+            
+        }
+        .price-div h3{
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        .qty-div{
+            display: flex;
+            align-items: baseline;
+        }
+       
+        .btn-div button{
+            
+             margin-right: 20px;
+             padding: 10px;
+             width: 120px;
+             color: white;
+             background-color: orange;
+             border: none;
+             border-radius: 5px;
+        }
+        .input-div{
+            display: flex;
+            align-items: baseline;
+        }
+        .input-tags{
+            margin-right: 10px;
+            margin-left: 15px;
+            height: 20px;
+        }
+        #container p{
+            color: grey;
+        }
+        .des-div{
+            width: 70%;
+            margin:auto;
+            line-height: 30px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            
+
+        }
+        .des-div p,h2{
+            padding: 20px;
+        }
+
+
+        @media only screen and (min-width :321px) and (max-width:720px){
+          #container{
+            border: 1px solid white;
+            width: 100%;
+            
+            display: block;
+            margin-top: 10px;
+            
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            
+        }
+        #image-div{
+          width: fit-content;
+          margin: auto;
+        }
+
+        .des-div{
+          width: 100%;
+          margin: 1%;
+        }
+        #right{
+          margin: 3%;
+        }
+      } 
+       
+    
