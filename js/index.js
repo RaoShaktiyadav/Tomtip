@@ -232,6 +232,11 @@ var mobileNavBtn = document.querySelector(".mobile-menu");
     },
   ];
 
+   var signin = document.querySelector("#signin");
+   signin.addEventListener("click", function(){
+     window.location.href = "../signin.html"
+   })
+
   boxonedata.map(function (elem) {
     var div = document.createElement("div");
     var image = document.createElement("img");
