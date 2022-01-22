@@ -1,0 +1,114 @@
+.top > .fleft {
+  display: flex;
+  width: 24%;
+
+  align-items: center;
+}
+.top > .fleft > img {
+  height: 2em;
+  width: 2em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  border-radius: 50%;
+}
+.top > .fleft > h3 {
+  width: 200px;
+}
+.fright {
+  justify-content: right;
+  display: flex;
+  width: 20%;
+  align-items: center;
+}
+.fa-apple {
+  font-size: 2em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+.fa-android {
+  font-size: 2em;
+  padding-left: 0.5em;
+}
+.top {
+  margin: auto;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+.bottomlist {
+  width: 80%;
+  display: flex;
+  margin: auto;
+}
+.bottomlist > div {
+  width: 20%;
+}
+.bottomlist > div > ul {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+.bottomlist > div > ul > li {
+  margin: 0.4em;
+}
+#newsemail {
+  width: 80%;
+  height: 2em;
+}
+#subcribebtn {
+  height: 2em;
+  border: 0px;
+  background-color: orangered;
+}
+.fsupimg {
+  width: 85%;
+  margin: auto;
+}
+.widthmax {
+  width: 100%;
+}
+.foter > p {
+  text-align: center;
+}
+.mobilefoot {
+  display: none;
+}
+.mobilefoot > ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: left;
+  max-width: 80%;
+}
+.mobilefoot > ul > li > div {
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  background-color: grey;
+  width: 2px;
+  height: 1em;
+}
+/* #footer {
+  position: absolute;
+  background-color: white;
+  bottom: 10px;
+  width: 100%;
+} */
+@media only screen and (max-width: 600px) {
+  .top {
+    display: none;
+  }
+  .bottomlist {
+    display: none;
+  }
+  .foot {
+    width: 100%;
+  }
+  .mobilefoot {
+    width: fit-content;
+    display: flex;
+    align-content: center;
+  }
+  .widthmax {
+    display: none;
+  }
+}
