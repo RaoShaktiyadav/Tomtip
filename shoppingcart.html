@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            text-decoration: none;
+            list-style: none;
+        }
+
+        body {
+            font-family: serif;
+            padding: 20px;
+        }
+
+        .cart_top_right {
+            height: 80px;
+            width: 100%;
+        }
+
+        .cart_top_right ul {
+            float: right;
+        }
+
+        .cart_top_right li {
+            text-align: center;
+            width: 230px;
+            height: 30px;
+            display: inline-block;
+            margin-top: 10px;
+            margin-right: 20px;
+            line-height: 30px;
+        }
+
+        .cart_top_right li a {
+            color: white;
+        }
+
+        #shopping {
+            color: white;
+        }
+
+        .shopping {
+            background-color: rgb(255, 173, 51);
+        }
+
+        #shipping {
+            color: rgb(124, 124, 102);
+        }
+
+        #payment {
+            color: rgb(124, 124, 102);
+        }
+
+        .shipping {
+            background-color: rgb(245, 245, 245);
+        }
+        .shipping:hover{
+            background-color: rgb(255, 173, 51);
+        }
+        #shipping:hover{
+            color: white;
+        }
+        #payment:hover{
+            color: white;
+        }
+        .payment:hover{
+            background-color: rgb(255, 173, 51);
+        }
+
+        .payment {
+            background-color: rgb(245, 245, 245);
+        }
+
+        .cart_top {
+            width: 1200px;
+            margin-top: 0px !important;
+            margin-right: auto !important;
+            margin-bottom: 0px !important;
+            margin-left: auto !important;
+            height: 78px;
+            padding: 13px 0 0;
+            display: flex;
+        }
+
+        .cart_box {
+            width: 1200px;
+            margin-top: 0px !important;
+            margin-right: auto !important;
+            margin-bottom: 0px !important;
+            margin-left: auto !important;
+            padding: 13px 0 0;
+        }
+
+        .cart_box_left {
+            width: 100%;
+        }
+
+        .product-container {
+            width: 100%;
+            display: inline-block;
+
+        }
+
+        .product-container>div {
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
+
+
+        #card > img{
+            width: auto;
+            height: auto;
+        }
+            
+
+        .product-container>div>p {
+            width: 80%;
+            margin: auto;
+        }
+
+        #card {
+            padding: 0px;
+            margin: 10px 0 10px 0;
+            display: flex;
+            border-radius: 5px;
+            justify-content: center;
+        }
+        #card > div{
+            margin: auto;
+        }
+        @media only screen and (max-width:900px) and (min-width:300px){
+            .product-container {
+                display: flex;
+               flex-wrap: wrap;
+               justify-content:flex-start;
+               flex-direction: column;
+            }
+            .product-container img{
+                width: 100px;
+                height: 100px;
+            }
+            .cart_box_left{
+                width: 100%;
+            }
+            .cart_top_right{
+                display: none;
+            }
+            .product-container>div {
+            width: auto;
+            margin: auto;
+            word-wrap: normal;
+        }
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="cart_top">
+        <div class="cart_top_left">
+            <div class="top_nav_logo">
+                <a href="#link home page"><img src="	https://static.tomtop.com/tomtop/cart/images/logo.png?4.1.25"
+                        alt="top_nav_logo"></a>
+            </div>
+        </div>
+        <div class="cart_top_right">
+            <ul>
+                <li class="shopping"> <a id="shopping" href="#">SHOPPING CART</a> </li>
+                <li class="shipping"> <a id="shipping" href="#">SHIPPING & PLACE ORDER</a> </li>
+                <li class="payment"> <a id="payment" href="#">PAYMENT</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="cart_box">
+        <h2 class="cart_text">Your Shopping Cart</h2>
+        <div class="cart_box_left">
+            <div class="product-container"></div>
+            <div id= "total" ><h1></h1></div>
+        </div>
+        <div class="cart_box_right"></div>
+    </div>
+</body>
+
+</html>
+<script>
+    var cart = JSON.parse(localStorage.getItem("CartItems")) || []
+    console.log(cart)
+
+    cart.map(display);
+
+    
+
+    function display(elem, index) {
+        var card = document.createElement("div");
+        console.log(card);
+        card.setAttribute("id", "card");
+
+
+
+        var i = document.createElement("img");
+        i.setAttribute("src", elem.image);
+
+
+        var name = document.createElement("p");
+        name.innerText = elem.name;
+
+        var cost = document.createElement("div");
+        cost.style.display = "flex";
+        cost.style.justifyContent = "space-around";
+
+        var price = document.createElement("h3");
+        price.innerText = elem.price;
+
+        var sop = document.createElement("p");
+        sop.innerText = elem.strikeoff;
+        sop.style.textDecoration = "line-through"
+        cost.append(price, sop);
+
+        var removebtn = document.createElement("button");
+        removebtn.textContent= "remove";
+        removebtn.addEventListener("click", function(){
+            removeitems(index);
+            
+        })
+
+        var div = document.createElement("div");
+        div.append(name,cost,removebtn)
+
+        card.append(i, div);
+
+        var cont = document.querySelector(".product-container");
+        cont.append(card);
+        localStorage.setItem("CartItems", JSON.stringify(cart))
+
+    }
+
+    var total = cart.reduce(function (acc,cv){
+          return (Number(acc+cv.price));
+    },0)
+
+    document.querySelector("h1").textContent=`Total amount of cart is US$ ${total}`
+
+    function removeitems(index){
+        cart.splice(index,1);
+        localStorage.setItem("CartItems", JSON.stringify(cart));
+        document.querySelector(".product-container").innerHTML="";
+        cart.map(display);
+        document.querySelector("h1").textContent=``;
+        var total = cart.reduce(function (acc,cv){
+          return (Number(acc+cv.price));
+    },0) 
+    document.querySelector("h1").textContent=`Total amount of cart is US$ ${total} `
+        
+    }
+
+    if (total > 1){
+        var proceedbtn = document.createElement("button");
+        proceedbtn.textContent= "Proceed to check out";
+        proceedbtn.addEventListener("click",function(){
+            window.location.href = "checkout.html"
+        })
+        document.querySelector(".cart_box_right").append(proceedbtn);
+    }
+</script>
