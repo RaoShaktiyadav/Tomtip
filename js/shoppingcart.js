@@ -73,6 +73,7 @@ if (total > 1) {
     proceedbtn.textContent = "Proceed to check out";
     proceedbtn.addEventListener("click", function () {
         window.location.href = "checkout.html"
+        localStorage.setItem("total", total);
     })
     document.querySelector(".cart_box_right").append(proceedbtn);
 }
