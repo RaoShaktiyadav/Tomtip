@@ -1,0 +1,157 @@
+.boxtwo {
+  padding: 1.5em;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: whitesmoke;
+}
+
+.boxtwo > div {
+  margin: 1em;
+  width: auto;
+}
+
+.boxtwo > div > h6 {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.boxtwo > div > img {
+  height: auto;
+  width: auto;
+  border-radius: 7em;
+  justify-content: center;
+}
+
+#mobboxone {
+  display: flex;
+  flex-wrap: wrap;
+  height: auto;
+}
+
+#mobboxone > div {
+  width: 24%;
+  text-align: center;
+  height: 50%;
+}
+
+#mobboxone > div > img {
+  width: 90%;
+  height: auto;
+}
+
+.moileboxtwo {
+  display: none;
+}
+
+.boxthree {
+  display: flex;
+  width: 90%;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: auto;
+}
+
+.boxthree > div {
+  width: 19%;
+  height: auto;
+  margin: 0.5%;
+  padding: 1%;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+}
+
+.boxthree > div > div > div {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.boxthree p,
+h6 {
+  margin-top: 3px;
+  margin-bottom: 3px;
+  width: auto;
+}
+
+.boxthree p {
+  text-decoration: line-through;
+  font-size: 0.8em;
+}
+
+.boxthree h5 {
+  font-size: 1em;
+  word-spacing: 0.2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: "....";
+}
+
+.boxthree img {
+  height: auto;
+  width: 100%;
+}
+
+.boxthree button {
+  width: 100%;
+  max-width: auto;
+  background-color: coral;
+  color: black;
+  border: 0px;
+  height: 1.5em;
+}
+
+@media only screen and (max-width: 900px) {
+  .moileboxtwo {
+    display: block;
+  }
+
+  .boxtwo {
+    display: none;
+  }
+
+  .boxthree {
+    width: 100%;
+  }
+
+  .boxthree > div {
+    width: 21%;
+  }
+
+  .boxthree p {
+    display: none;
+  }
+
+  .boxthree h6 {
+    margin: auto;
+  }
+}
+
+@media only screen and (max-width: 523px) {
+  .moileboxtwo {
+    display: block;
+  }
+
+  .boxtwo {
+    display: none;
+  }
+
+  .boxthree {
+    width: 100%;
+  }
+
+  .boxthree > div {
+    width: 30%;
+    justify-content: space-around;
+  }
+
+  .boxthree h5 {
+    font-size: 1em;
+  }
+
+  .boxthree button {
+    height: 2.9em;
+    width: 100%;
+  }
+}
