@@ -6,7 +6,7 @@ function display(elem, index) {
     var tr = document.createElement("tr");
 
     var td1 = document.createElement("td");
-    td1.textContent = index;
+    td1.textContent = index+1;
 
     var td2 = document.createElement("td");
     td2.textContent = elem.name;
@@ -27,6 +27,7 @@ document.querySelector("form").addEventListener("submit", deliverydata);
 var arr = JSON.parse(localStorage.getItem("deliverydata")) || [];
 
 function deliverydata(event) {
+    event.preventDefault();
     var names = document.querySelector(".names").value;
     var number = document.querySelector(".mobile").value;
     var address = document.querySelector("textarea").value;
