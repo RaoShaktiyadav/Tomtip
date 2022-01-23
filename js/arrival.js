@@ -104,6 +104,7 @@ var productdata = [
 ];
 
 localStorage.setItem("productData", JSON.stringify(productdata));
+var cartArray = JSON.parse(localStorage.getItem("CartItems")) || [];
 
 productdata.map(function (elem, index) {
     var card = document.createElement("div");
