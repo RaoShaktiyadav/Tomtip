@@ -107,7 +107,7 @@ localStorage.setItem("productData", JSON.stringify(productdata));
 
 productdata.map(function (elem, index) {
     var card = document.createElement("div");
-    card.style.width = "300px";
+    card.style.width = "90%";
     card.addEventListener("click", function (elem, index) {
         card.setAttribute("href", (window.location.href = "productdetails.html"));
         productdetails.push(elem);

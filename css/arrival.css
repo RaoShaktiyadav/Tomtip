@@ -56,6 +56,7 @@
 }
 
 .product-container > div {
+  
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
@@ -77,15 +78,36 @@
   margin: auto;
 }
 
-@media only screen and (min-width: 320px) and (max-width: 900px) {
+@media only screen and (min-width: 750px) and (max-width: 1200px) {
   .product-container {
     width: 100%;
     border: white 1px solid;
     margin-top: 150px;
     display: grid;
-    grid-template-columns: repeat(2, 300px);
+    grid-template-columns: repeat(3, 250px);
     grid-gap: 10px;
     margin-top: 10px;
+    margin: auto;
+  }
+
+  #left-box {
+    display: none;
+  }
+
+  .brands {
+    display: none;
+  }
+}
+@media only screen and (min-width: 500px) and (max-width: 750px) {
+  .product-container {
+    width: 100%;
+    border: white 1px solid;
+    margin-top: 150px;
+    display: grid;
+    grid-template-columns: repeat(2, 210px);
+    grid-gap: 10px;
+    margin-top: 10px;
+    margin: auto;
   }
 
   #left-box {
@@ -97,15 +119,16 @@
   }
 }
 
-@media only screen and (min-width: 0px) and (max-width: 319px) {
+@media only screen and (min-width: 280px) and (max-width: 500px) {
   .product-container {
-    width: 100%;
+    width: 90%;
     border: white 1px solid;
     margin-top: 150px;
     display: grid;
-    grid-template-columns: repeat(1, 300px);
+    grid-template-columns: repeat(1, 170px);
     grid-gap: 10px;
     margin-top: 10px;
+    margin: auto;
   }
 
   #left-box {
